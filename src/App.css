@@ -1,0 +1,23 @@
+#root {
+  margin: 0 auto;
+}
+
+main {
+  width: 60vw;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  width: 100%;
+}
+
+.listitem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border-bottom: 1px solid blue;
+}
