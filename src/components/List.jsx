@@ -1,14 +1,34 @@
 import ListItem from "./ListItem";
 
-export default function List() {
+function List({ items, deleteItem, toggleCompleted }) {
   return (
     <div>
-      <h2>Added tasks</h2>
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      <h3>Tasks</h3>
+      <ul>
+        {items
+          .filter((i) => i.completed === false)
+          .map((item) => (
+            <ListItem
+              deleteItem={deleteItem}
+              toggleCompleted={toggleCompleted}
+              key={item.id}
+              {...item}
+            />
+          ))}
+      </ul>
+      <h3>Completed tasks</h3>
+      <ul>
+        {items.filter((i) => i.completed === true).map((item) => (
+          <ListItem
+            deleteItem={deleteItem}
+            toggleCompleted={toggleCompleted}
+            key={item.id}
+            {...item}
+          />
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default List;
