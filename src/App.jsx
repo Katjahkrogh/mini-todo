@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Form from "./components/Form";
 import List from "./components/List";
-import "/app.css";
+import "app.css";
 
 function App() {
   const [items, setItems] = useState([
